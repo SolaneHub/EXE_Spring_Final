@@ -2,8 +2,6 @@ package it.simone.exespringfinal.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
 import it.simone.exespringfinal.entity.Cliente;
 import it.simone.exespringfinal.entity.Fattura;
 import it.simone.exespringfinal.entity.StatoFattura;
