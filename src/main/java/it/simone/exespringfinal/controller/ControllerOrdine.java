@@ -10,16 +10,15 @@ import it.simone.exespringfinal.service.ServiceOrdine;
 @RestController
 @RequestMapping("/ordini")
 public class ControllerOrdine extends AbstractController<Ordine, Long> {
-	
+
 	private final ServiceOrdine service;
-	
-	public ControllerOrdine(ServiceOrdine service){
+
+	public ControllerOrdine(ServiceOrdine service) {
 		this.service = service;
 	}
 
 	@Override
 	protected AbstractService<Ordine, Long> getService() {
-
 		return service;
 	}
 
