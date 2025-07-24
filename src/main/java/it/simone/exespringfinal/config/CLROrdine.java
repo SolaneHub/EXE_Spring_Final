@@ -11,7 +11,7 @@ import it.simone.exespringfinal.service.ServiceCliente;
 import it.simone.exespringfinal.service.ServiceOrdine;
 import it.simone.exespringfinal.service.ServiceServizio;
 
-//@Component
+@Component
 @Order(6)
 public class CLROrdine implements CommandLineRunner {
 

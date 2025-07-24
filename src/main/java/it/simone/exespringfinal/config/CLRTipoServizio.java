@@ -11,7 +11,7 @@ import it.simone.exespringfinal.entity.Servizio;
 import it.simone.exespringfinal.entity.TipoServizio;
 import it.simone.exespringfinal.service.ServiceTipoServizio;
 
-//@Component
+@Component
 @Order(4)
 public class CLRTipoServizio implements CommandLineRunner {
 
