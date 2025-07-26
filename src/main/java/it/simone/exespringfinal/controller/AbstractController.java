@@ -2,6 +2,7 @@ package it.simone.exespringfinal.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,11 +40,16 @@ public abstract class AbstractController<T, ID> {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteById(@PathVariable ID id) {
+		HttpHeaders myHttpHeaders = new HttpHeaders();
+		myHttpHeaders.add(HttpHeaders.CONTENT_TYPE, "text/plain");
+		String myJson = "";
 		if (!getService().existsById(id)) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ID " + id + " non trovato.");
+			myJson= "ID " + id + " non trovato.";
+			return new ResponseEntity<>(myJson, myHttpHeaders, HttpStatus.NOT_FOUND);
 		} else {
 			getService().deleteById(id);
-			return ResponseEntity.status(HttpStatus.FOUND).body("ID " + id + " eliminato con successo.");
+			myJson = "{\"Messaggio\":\"Ok, eliminato id = "+ id +"\"}";
+			return new ResponseEntity<>(myJson, myHttpHeaders, HttpStatus.OK);
 		}
 
 	}
