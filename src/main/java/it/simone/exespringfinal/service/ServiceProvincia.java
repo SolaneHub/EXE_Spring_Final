@@ -1,5 +1,7 @@
 package it.simone.exespringfinal.service;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +40,10 @@ public class ServiceProvincia extends AbstractService<Provincia, Long> {
 	public Provincia findByNome(String nome) {
 	    return repository.findByNome(nome).orElse(null);
 	}
+	
+	public void saveAll(List<Provincia> province) {
+	    repository.saveAll(province);
+	}
+
 
 }

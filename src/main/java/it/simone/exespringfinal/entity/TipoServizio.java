@@ -22,7 +22,7 @@ public class TipoServizio {
 	private Long id;
 	private String nome;
 	@JsonIgnore
-	@OneToMany(mappedBy = "tipoServizio", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "tipoServizio", cascade = CascadeType.ALL)
 	private List<Servizio> servizi = new ArrayList<Servizio>();
 
 	public TipoServizio() {
@@ -52,8 +52,13 @@ public class TipoServizio {
 	}
 
 	public void setServizi(List<Servizio> servizi) {
-		this.servizi = servizi;
+	    this.servizi.clear(); // Rimuove i precedenti (orphanRemoval)
+	    for (Servizio s : servizi) {
+	        s.setTipoServizio(this); // Assicura relazione bidirezionale
+	        this.servizi.add(s);
+	    }
 	}
+
 
 	public Long getId() {
 		return id;

@@ -1,5 +1,7 @@
 package it.simone.exespringfinal.service;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +30,6 @@ public class ServiceComune extends AbstractService<Comune, Long> {
 	    return "Comune";
 	}
 	
-	@Override
-	public Comune save(Comune entity) {
-		if (entity.getProvincia().getId() == null) {
-			repositoryProvincia.save(entity.getProvincia());
-		}
-		return super.save(entity);
-	}
 
 	@Override
 	public Comune updateById(Long id, Comune entityDetails) {
@@ -45,5 +40,10 @@ public class ServiceComune extends AbstractService<Comune, Long> {
 		}).orElseThrow(() -> new RuntimeException("Comune con id: " + id + " non trovato"));
 
 	}
+	
+	public void saveAll(List<Comune> comuni) {
+	    repositoryComune.saveAll(comuni);
+	}
+
 
 }

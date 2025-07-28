@@ -14,8 +14,6 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Servizio {
 
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -23,16 +21,16 @@ public class Servizio {
 	private String nome;
 	private Double prezzo;
 	private String descrizione;
-    @ManyToOne
-    @JoinColumn(name = "id_tiposervizio")
-    private TipoServizio tipoServizio;
-    @OneToMany(mappedBy = "servizio", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ordine> ordini;
+	@ManyToOne
+	@JoinColumn(name = "id_tiposervizio")
+	private TipoServizio tipoServizio;
+	@OneToMany(mappedBy = "servizio", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Ordine> ordini;
 
 	public Servizio() {
 
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Servizio [id=" + id + ", nome=" + nome + ", prezzo=" + prezzo + ", descrizione=" + descrizione
