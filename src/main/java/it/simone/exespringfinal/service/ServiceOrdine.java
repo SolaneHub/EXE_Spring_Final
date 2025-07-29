@@ -1,5 +1,7 @@
 package it.simone.exespringfinal.service;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,15 +11,15 @@ import it.simone.exespringfinal.repository.RepositoryOrdine;
 @Service
 public class ServiceOrdine extends AbstractService<Ordine, Long> {
 
-	public final RepositoryOrdine repository;
+	private final RepositoryOrdine repositoryOrdine;
 
-	public ServiceOrdine(RepositoryOrdine repository) {
-		this.repository = repository;
+	public ServiceOrdine(RepositoryOrdine repositoryOrdine) {
+		this.repositoryOrdine = repositoryOrdine;
 	}
 
 	@Override
 	protected JpaRepository<Ordine, Long> getRepository() {
-		return repository;
+		return repositoryOrdine;
 	}
 
 	@Override
@@ -34,6 +36,14 @@ public class ServiceOrdine extends AbstractService<Ordine, Long> {
 			return save(ordine);
 		}).orElseThrow(() -> new RuntimeException("Ordine con id: " + id + " non trovato"));
 
+	}
+
+	public List<Ordine> findbyClienteRagioneSociale(String ragioneSociale) {
+		return repositoryOrdine.findByClienteRagioneSociale(ragioneSociale);
+	}
+
+	public List<Ordine> findByServizioNome(String nome) {
+		return repositoryOrdine.findByServizioNome(nome);
 	}
 
 }

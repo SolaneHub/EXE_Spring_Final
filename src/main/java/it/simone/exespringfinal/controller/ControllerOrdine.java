@@ -1,6 +1,10 @@
 package it.simone.exespringfinal.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.simone.exespringfinal.entity.Ordine;
@@ -20,6 +24,16 @@ public class ControllerOrdine extends AbstractController<Ordine, Long> {
 	@Override
 	protected AbstractService<Ordine, Long> getService() {
 		return service;
+	}
+
+	@GetMapping("/cliente")
+	public List<Ordine> getOrdiniByClienteRagioneSociale(@RequestParam String ragioneSociale) {
+		return service.findbyClienteRagioneSociale(ragioneSociale);
+	}
+
+	@GetMapping("/servizio")
+	public List<Ordine> findByServizio(@RequestParam String nome) {
+		return service.findByServizioNome(nome);
 	}
 
 }
