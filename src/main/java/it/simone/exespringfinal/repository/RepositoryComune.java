@@ -8,7 +8,7 @@ import it.simone.exespringfinal.entity.Comune;
 import it.simone.exespringfinal.entity.Provincia;
 
 public interface RepositoryComune extends JpaRepository<Comune, Long> {
-	
+
 	Optional<Comune> findByNomeAndProvincia(String nome, Provincia provincia);
 
 }

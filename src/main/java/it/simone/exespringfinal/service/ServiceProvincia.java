@@ -21,29 +21,27 @@ public class ServiceProvincia extends AbstractService<Provincia, Long> {
 	protected JpaRepository<Provincia, Long> getRepository() {
 		return repository;
 	}
-	
+
 	@Override
 	protected String getEntityName() {
-	    return "Provincia";
+		return "Provincia";
 	}
-
 
 	@Override
 	public Provincia updateById(Long id, Provincia entityDetails) {
-		return getRepository().findById(id).map(provincia->{
+		return getRepository().findById(id).map(provincia -> {
 			provincia.setNome(entityDetails.getNome());
 			provincia.setSigla(entityDetails.getSigla());
 			return save(provincia);
 		}).orElseThrow(() -> new RuntimeException("Provincia con id: " + id + " non trovata"));
 	}
-	
+
 	public Provincia findByNome(String nome) {
-	    return repository.findByNome(nome).orElse(null);
-	}
-	
-	public void saveAll(List<Provincia> province) {
-	    repository.saveAll(province);
+		return repository.findByNome(nome).orElse(null);
 	}
 
+	public void saveAll(List<Provincia> province) {
+		repository.saveAll(province);
+	}
 
 }

@@ -20,7 +20,6 @@ public class Indirizzo {
 	@ManyToOne
 	@JoinColumn(name = "id_comune")
 	private Comune comune;
-	
 
 	public Indirizzo() {
 

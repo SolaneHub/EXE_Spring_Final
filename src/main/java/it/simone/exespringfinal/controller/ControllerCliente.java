@@ -36,9 +36,9 @@ public class ControllerCliente extends AbstractController<Cliente, Long> {
 	public List<Cliente> getClientiByFatturato(@RequestParam Double min, @RequestParam Double max) {
 		return service.findByFatturatoAnnualeBetween(min, max);
 	}
-	
+
 	@GetMapping("/tipocliente")
-	public List<Cliente> getClientiByTipoCliente(@RequestParam TipoCliente tipoCliente){
+	public List<Cliente> getClientiByTipoCliente(@RequestParam TipoCliente tipoCliente) {
 		return service.findByTipoCliente(tipoCliente);
 	}
 

@@ -29,7 +29,7 @@ public class CLRServizio implements CommandLineRunner {
 					serviceTipoServizio.findByIdOrThrow(1L)));
 			serviceServizio.save(new Servizio("Consulenza IT", 150.0, "Analisi infrastruttura IT",
 					serviceTipoServizio.findByIdOrThrow(1L)));
-			
+
 			serviceServizio.save(
 					new Servizio("Corso Java", 300.0, "Corso base Java SE", serviceTipoServizio.findByIdOrThrow(2L)));
 			serviceServizio.save(new Servizio("Corso Spring Boot", 400.0, "Corso avanzato Spring Boot",

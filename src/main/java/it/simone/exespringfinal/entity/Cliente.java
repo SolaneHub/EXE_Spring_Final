@@ -29,21 +29,22 @@ public class Cliente {
 	private String partitaIva;
 	// Rimossa la configurazione cascade
 	@OneToOne
-    @JoinColumn(name = "id_indirizzo")
-    private Indirizzo indirizzo;
+	@JoinColumn(name = "id_indirizzo")
+	private Indirizzo indirizzo;
 	private String email;
 	private String telefono;
 	private Double fatturatoAnnuale;
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Fattura> fatture;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ordine> ordini;
-	
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Ordine> ordini;
+
 	public Cliente() {
-		
+
 	}
 
-	public Cliente(String ragioneSociale, TipoCliente tipoCliente, String partitaIva, Indirizzo indirizzo, String email, String telefono, Double fatturatoAnnuale) {
+	public Cliente(String ragioneSociale, TipoCliente tipoCliente, String partitaIva, Indirizzo indirizzo, String email,
+			String telefono, Double fatturatoAnnuale) {
 		this.ragioneSociale = ragioneSociale;
 		this.tipoCliente = tipoCliente;
 		this.partitaIva = partitaIva;

@@ -9,7 +9,7 @@ import it.simone.exespringfinal.service.ServiceIndirizzo;
 
 @RestController
 @RequestMapping("/indirizzi")
-public class ControllerIndirizzo extends AbstractController<Indirizzo, Long>{
+public class ControllerIndirizzo extends AbstractController<Indirizzo, Long> {
 
 	private final ServiceIndirizzo service;
 

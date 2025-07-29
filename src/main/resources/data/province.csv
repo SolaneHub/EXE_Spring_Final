@@ -2,110 +2,110 @@ Sigla;Provincia;Regione
 AG;Agrigento;Sicilia
 AL;Alessandria;Piemonte
 AN;Ancona;Marche
-AO;Aosta;Valle d'Aosta
+AO;Valle d'Aosta;Valle d'Aosta
+AP;Ascoli Piceno;Marche
 AQ;L'Aquila;Abruzzo
 AR;Arezzo;Toscana
-AP;Ascoli Piceno;Marche
 AT;Asti;Piemonte
 AV;Avellino;Campania
 BA;Bari;Puglia
-BT;Barletta Andria Trani;Puglia
-BL;Belluno;Veneto
-BN;Benevento;Campania
 BG;Bergamo;Lombardia
 BI;Biella;Piemonte
-BO;Bologna;Emilia Romagna
-BZ;Bolzano;Trentino Alto Adige
-BS;Brescia;Lombardia
+BL;Belluno;Veneto
+BN;Benevento;Campania
+BO;Bologna;Emilia-Romagna
 BR;Brindisi;Puglia
+BS;Brescia;Lombardia
+BT;Barletta-Andria-Trani;Puglia
+BZ;Bolzano;Trentino-Alto Adige
 CA;Cagliari;Sardegna
-CL;Caltanissetta;Sicilia
 CB;Campobasso;Molise
-CI;Carbonia Iglesias;Sardegna
 CE;Caserta;Campania
+CH;Chieti;Abruzzo
+CL;Caltanissetta;Sicilia
+CN;Cuneo;Piemonte
+CO;Como;Lombardia
+CR;Cremona;Lombardia
+CS;Cosenza;Calabria
 CT;Catania;Sicilia
 CZ;Catanzaro;Calabria
-CH;Chieti;Abruzzo
-CO;Como;Lombardia
-CS;Cosenza;Calabria
-CR;Cremona;Lombardia
-KR;Crotone;Calabria
-CN;Cuneo;Piemonte
 EN;Enna;Sicilia
-FM;Fermo;Marche
-FE;Ferrara;Emilia Romagna
-FI;Firenze;Toscana
+FC;Forlì-Cesena;Emilia-Romagna
+FE;Ferrara;Emilia-Romagna
 FG;Foggia;Puglia
-FC;Forli Cesena;Emilia Romagna
+FI;Firenze;Toscana
+FM;Fermo;Marche
 FR;Frosinone;Lazio
 GE;Genova;Liguria
-GO;Gorizia;Friuli Venezia Giulia
+GO;Gorizia;Friuli-Venezia Giulia
 GR;Grosseto;Toscana
 IM;Imperia;Liguria
 IS;Isernia;Molise
-SP;La Spezia;Liguria
-LT;Latina;Lazio
-LE;Lecce;Puglia
+KR;Crotone;Calabria
 LC;Lecco;Lombardia
+LE;Lecce;Puglia
 LI;Livorno;Toscana
 LO;Lodi;Lombardia
+LT;Latina;Lazio
 LU;Lucca;Toscana
+MB;Monza e Brianza;Lombardia
 MC;Macerata;Marche
-MN;Mantova;Lombardia
-MS;Massa Carrara;Toscana
-MT;Matera;Basilicata
-VS;Medio Campidano;Sardegna
 ME;Messina;Sicilia
 MI;Milano;Lombardia
-MO;Modena;Emilia Romagna
-MB;Monza Brianza;Lombardia
+MN;Mantova;Lombardia
+MO;Modena;Emilia-Romagna
+MS;Massa-Carrara;Toscana
+MT;Matera;Basilicata
 NA;Napoli;Campania
 NO;Novara;Piemonte
 NU;Nuoro;Sardegna
 OG;Ogliastra;Sardegna
-OT;Olbia Tempio;Sardegna
 OR;Oristano;Sardegna
-PD;Padova;Veneto
+OT;Gallura Nord-Est Sardegna;Sardegna
 PA;Palermo;Sicilia
-PR;Parma;Emilia Romagna
-PV;Pavia;Lombardia
-PG;Perugia;Umbria
-PU;Pesaro Urbino;Marche
+PC;Piacenza;Emilia-Romagna
+PD;Padova;Veneto
 PE;Pescara;Abruzzo
-PC;Piacenza;Emilia Romagna
+PG;Perugia;Umbria
 PI;Pisa;Toscana
-PT;Pistoia;Toscana
-PN;Pordenone;Friuli Venezia Giulia
-PZ;Potenza;Basilicata
+PN;Pordenone;Friuli-Venezia Giulia
 PO;Prato;Toscana
-RG;Ragusa;Sicilia
-RA;Ravenna;Emilia Romagna
+PR;Parma;Emilia-Romagna
+PT;Pistoia;Toscana
+PU;Pesaro e Urbino;Marche
+PV;Pavia;Lombardia
+PZ;Potenza;Basilicata
+RA;Ravenna;Emilia-Romagna
 RC;Reggio Calabria;Calabria
-RE;Reggio Emilia;Emilia Romagna
+RE;Reggio Emilia;Emilia-Romagna
+RG;Ragusa;Sicilia
 RI;Rieti;Lazio
-RN;Rimini;Emilia Romagna
-Roma;Roma;Lazio
+RM;Roma;Lazio
+RN;Rimini;Emilia-Romagna
 RO;Rovigo;Veneto
 SA;Salerno;Campania
-SS;Sassari;Sardegna
-SV;Savona;Liguria
 SI;Siena;Toscana
-SR;Siracusa;Sicilia
 SO;Sondrio;Lombardia
+SP;La Spezia;Liguria
+SR;Siracusa;Sicilia
+SS;Sassari;Sardegna
+SU;Sulcis Iglesiente;Sardegna
+SV;Savona;Liguria
 TA;Taranto;Puglia
 TE;Teramo;Abruzzo
-TR;Terni;Umbria
+TN;Trento;Trentino-Alto Adige
 TO;Torino;Piemonte
 TP;Trapani;Sicilia
-TN;Trento;Trentino Alto Adige
+TR;Terni;Umbria
+TS;Trieste;Friuli-Venezia Giulia
 TV;Treviso;Veneto
-TS;Trieste;Friuli Venezia Giulia
-UD;Udine;Friuli Venezia Giulia
+UD;Udine;Friuli-Venezia Giulia
 VA;Varese;Lombardia
-VE;Venezia;Veneto
-VB;Verbania;Piemonte
+VB;Verbano-Cusio-Ossola;Piemonte
 VC;Vercelli;Piemonte
-VR;Verona;Veneto
-VV;Vibo Valentia;Calabria
+VE;Venezia;Veneto
 VI;Vicenza;Veneto
+VR;Verona;Veneto
+VS;Medio Campidano;Sardegna
 VT;Viterbo;Lazio
+VV;Vibo Valentia;Calabria

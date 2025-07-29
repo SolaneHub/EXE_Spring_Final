@@ -44,11 +44,11 @@ public abstract class AbstractController<T, ID> {
 		myHttpHeaders.add(HttpHeaders.CONTENT_TYPE, "text/plain");
 		String myJson = "";
 		if (!getService().existsById(id)) {
-			myJson= "ID " + id + " non trovato.";
+			myJson = "ID " + id + " non trovato.";
 			return new ResponseEntity<>(myJson, myHttpHeaders, HttpStatus.NOT_FOUND);
 		} else {
 			getService().deleteById(id);
-			myJson = "{\"Messaggio\":\"Ok, eliminato id = "+ id +"\"}";
+			myJson = "{\"Messaggio\":\"Ok, eliminato id = " + id + "\"}";
 			return new ResponseEntity<>(myJson, myHttpHeaders, HttpStatus.OK);
 		}
 

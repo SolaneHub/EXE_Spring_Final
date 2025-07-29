@@ -24,12 +24,11 @@ public class ServiceComune extends AbstractService<Comune, Long> {
 	protected JpaRepository<Comune, Long> getRepository() {
 		return repositoryComune;
 	}
-	
+
 	@Override
 	protected String getEntityName() {
-	    return "Comune";
+		return "Comune";
 	}
-	
 
 	@Override
 	public Comune updateById(Long id, Comune entityDetails) {
@@ -40,10 +39,9 @@ public class ServiceComune extends AbstractService<Comune, Long> {
 		}).orElseThrow(() -> new RuntimeException("Comune con id: " + id + " non trovato"));
 
 	}
-	
-	public void saveAll(List<Comune> comuni) {
-	    repositoryComune.saveAll(comuni);
-	}
 
+	public void saveAll(List<Comune> comuni) {
+		repositoryComune.saveAll(comuni);
+	}
 
 }

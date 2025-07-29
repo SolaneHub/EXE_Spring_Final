@@ -15,8 +15,6 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class TipoServizio {
 
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,7 +26,7 @@ public class TipoServizio {
 	public TipoServizio() {
 
 	}
-	
+
 	@Override
 	public String toString() {
 		return "TipoServizio [id=" + id + ", nome=" + nome + ", servizi=" + servizi + "]";
@@ -52,13 +50,12 @@ public class TipoServizio {
 	}
 
 	public void setServizi(List<Servizio> servizi) {
-	    this.servizi.clear(); // Rimuove i precedenti (orphanRemoval)
-	    for (Servizio s : servizi) {
-	        s.setTipoServizio(this); // Assicura relazione bidirezionale
-	        this.servizi.add(s);
-	    }
+		this.servizi.clear(); // Rimuove i precedenti (orphanRemoval)
+		for (Servizio s : servizi) {
+			s.setTipoServizio(this); // Assicura relazione bidirezionale
+			this.servizi.add(s);
+		}
 	}
-
 
 	public Long getId() {
 		return id;

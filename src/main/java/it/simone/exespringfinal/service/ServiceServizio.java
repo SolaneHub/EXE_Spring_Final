@@ -56,20 +56,20 @@ public class ServiceServizio extends AbstractService<Servizio, Long> {
 
 	@Override
 	public void deleteById(Long id) {
-	    Servizio servizio = repositoryServizio.findById(id)
-	            .orElseThrow(() -> new RuntimeException("Servizio con id: " + id + " non trovato"));
+		Servizio servizio = repositoryServizio.findById(id)
+				.orElseThrow(() -> new RuntimeException("Servizio con id: " + id + " non trovato"));
 
-	    // Prendi il tipoServizio associato al Servizio
-	    var tipoServizio = servizio.getTipoServizio();
+		// Prendi il tipoServizio associato al Servizio
+		var tipoServizio = servizio.getTipoServizio();
 
-	    // Rimuovi il servizio dalla lista dei servizi del tipoServizio
-	    if (tipoServizio != null) {
-	        tipoServizio.getServizi().remove(servizio); // Rimuovi il servizio dalla lista di servizi
-	        repositoryTipoServizio.save(tipoServizio); // Salva il tipoServizio aggiornato
-	    }
+		// Rimuovi il servizio dalla lista dei servizi del tipoServizio
+		if (tipoServizio != null) {
+			tipoServizio.getServizi().remove(servizio); // Rimuovi il servizio dalla lista di servizi
+			repositoryTipoServizio.save(tipoServizio); // Salva il tipoServizio aggiornato
+		}
 
-	    // Elimina il servizio dal DB
-	    super.deleteById(id);
+		// Elimina il servizio dal DB
+		super.deleteById(id);
 	}
 
 }
