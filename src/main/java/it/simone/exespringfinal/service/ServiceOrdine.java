@@ -2,6 +2,8 @@ package it.simone.exespringfinal.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +46,14 @@ public class ServiceOrdine extends AbstractService<Ordine, Long> {
 
 	public List<Ordine> findByServizioNome(String nome) {
 		return repositoryOrdine.findByServizioNome(nome);
+	}
+
+	public Page<Ordine> getByClienteRagioneSociale(String ragioneSociale, Pageable pageable) {
+		return repositoryOrdine.findByCliente_RagioneSociale(ragioneSociale, pageable);
+	}
+
+	public Page<Ordine> getByServizioNome(String nomeServizio, Pageable pageable) {
+		return repositoryOrdine.findByServizio_Nome(nomeServizio, pageable);
 	}
 
 }

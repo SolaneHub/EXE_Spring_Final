@@ -1,5 +1,7 @@
 package it.simone.exespringfinal.service;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +72,10 @@ public class ServiceServizio extends AbstractService<Servizio, Long> {
 
 		// Elimina il servizio dal DB
 		super.deleteById(id);
+	}
+
+	public List<Servizio> findByTipoServizioNome(String nome) {
+		return repositoryServizio.findByTipoServizioNome(nome);
 	}
 
 }

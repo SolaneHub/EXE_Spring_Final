@@ -12,15 +12,15 @@ import it.simone.exespringfinal.repository.RepositoryTipoServizio;
 @Service
 public class ServiceTipoServizio extends AbstractService<TipoServizio, Long> {
 
-	public final RepositoryTipoServizio repository;
+	public final RepositoryTipoServizio repositoryTipoServizio;
 
-	public ServiceTipoServizio(RepositoryTipoServizio repository) {
-		this.repository = repository;
+	public ServiceTipoServizio(RepositoryTipoServizio repositoryTipoServizio) {
+		this.repositoryTipoServizio = repositoryTipoServizio;
 	}
 
 	@Override
 	protected JpaRepository<TipoServizio, Long> getRepository() {
-		return repository;
+		return repositoryTipoServizio;
 	}
 
 	@Override

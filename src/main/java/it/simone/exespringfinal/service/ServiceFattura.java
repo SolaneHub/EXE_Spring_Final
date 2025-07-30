@@ -43,8 +43,8 @@ public class ServiceFattura extends AbstractService<Fattura, Long> {
 		return repositoryFattura.findByClienteRagioneSociale(ragioneSociale);
 	}
 
-	public List<Fattura> findByStato(StatoFattura stato){
-		return repositoryFattura.findByStato(null)
+	public List<Fattura> findByStato(StatoFattura stato) {
+		return repositoryFattura.findByStato(stato);
 	}
 
 }

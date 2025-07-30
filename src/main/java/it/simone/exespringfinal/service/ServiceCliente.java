@@ -2,6 +2,8 @@ package it.simone.exespringfinal.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,7 @@ import it.simone.exespringfinal.repository.RepositoryProvincia;
 public class ServiceCliente extends AbstractService<Cliente, Long> {
 
 	private RepositoryCliente repositoryCliente;
-	private final ServiceIndirizzo serviceIndirizzo;
+	private ServiceIndirizzo serviceIndirizzo;
 
 	public ServiceCliente(RepositoryCliente repositoryCliente, RepositoryIndirizzo repositoryIndirizzo,
 			RepositoryComune repositoryComune, RepositoryProvincia repositoryProvincia,
@@ -77,7 +79,20 @@ public class ServiceCliente extends AbstractService<Cliente, Long> {
 		return repositoryCliente.findByTipoCliente(tipoCliente);
 	}
 
-	public List<Cliente> findByIndirizzo_Comune_Provincia_Nome(String nomeProvincia) {
-		return repositoryCliente.findByIndirizzo_Comune_Provincia_Nome(nomeProvincia);
+	public List<Cliente> findByIndirizzoComuneProvinciaNome(String nomeProvincia) {
+		return repositoryCliente.findByIndirizzoComuneProvinciaNome(nomeProvincia);
 	}
+
+	public Page<Cliente> getClientiByFatturatoAnnuale(Double min, Double max, Pageable pageable) {
+		return repositoryCliente.findByFatturatoAnnualeBetween(min, max, pageable);
+	}
+
+	public Page<Cliente> getClientiByTipoCliente(TipoCliente tipoCliente, Pageable pageable) {
+		return repositoryCliente.findByTipoCliente(tipoCliente, pageable);
+	}
+
+	public Page<Cliente> getClientiByIndirizzoComuneProvinciaNome(String nomeProvincia, Pageable pageable) {
+		return repositoryCliente.findByIndirizzoComuneProvinciaNome(nomeProvincia, pageable);
+	}
+
 }

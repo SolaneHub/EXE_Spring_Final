@@ -2,6 +2,9 @@ package it.simone.exespringfinal.controller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,7 +46,26 @@ public class ControllerCliente extends AbstractController<Cliente, Long> {
 	}
 
 	@GetMapping("/provincia")
-	public List<Cliente> getClientiByComune_Provincia_Nome(@RequestParam String provincia) {
-		return service.findByIndirizzo_Comune_Provincia_Nome(provincia);
+	public List<Cliente> getClientiByComuneProvinciaNome(@RequestParam String nome) {
+		return service.findByIndirizzoComuneProvinciaNome(nome);
 	}
+
+	@GetMapping("/fatturato-paging")
+	public Page<Cliente> getClientiByFatturatoAnnuale(@RequestParam Double min, @RequestParam Double max,
+			@PageableDefault(size = 2, sort = "fatturatoAnnuale") Pageable pageable) {
+
+		return service.getClientiByFatturatoAnnuale(min, max, pageable);
+	}
+
+	@GetMapping("/tipocliente-paging")
+	public Page<Cliente> getClientiByTipoCliente(@RequestParam TipoCliente tipoCliente,
+			@PageableDefault(size = 2, sort = "tipoCliente") Pageable pageable) {
+		return service.getClientiByTipoCliente(tipoCliente, pageable);
+	}
+
+	@GetMapping("/provincia-paging")
+	public Page<Cliente> getByProvincia(@RequestParam String nome, Pageable pageable) {
+		return service.getClientiByIndirizzoComuneProvinciaNome(nome, pageable);
+	}
+
 }

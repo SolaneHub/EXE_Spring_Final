@@ -10,8 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 //Fa diventare la classe una tabella nel database
@@ -28,7 +28,7 @@ public class Cliente {
 	private TipoCliente tipoCliente;
 	private String partitaIva;
 	// Rimossa la configurazione cascade
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "id_indirizzo")
 	private Indirizzo indirizzo;
 	private String email;

@@ -11,15 +11,15 @@ import it.simone.exespringfinal.repository.RepositoryProvincia;
 @Service
 public class ServiceProvincia extends AbstractService<Provincia, Long> {
 
-	public final RepositoryProvincia repository;
+	public final RepositoryProvincia repositoryProvincia;
 
-	public ServiceProvincia(RepositoryProvincia repository) {
-		this.repository = repository;
+	public ServiceProvincia(RepositoryProvincia repositoryProvincia) {
+		this.repositoryProvincia = repositoryProvincia;
 	}
 
 	@Override
 	protected JpaRepository<Provincia, Long> getRepository() {
-		return repository;
+		return repositoryProvincia;
 	}
 
 	@Override
@@ -37,11 +37,11 @@ public class ServiceProvincia extends AbstractService<Provincia, Long> {
 	}
 
 	public Provincia findByNome(String nome) {
-		return repository.findByNome(nome).orElse(null);
+		return repositoryProvincia.findByNome(nome).orElse(null);
 	}
 
 	public void saveAll(List<Provincia> province) {
-		repository.saveAll(province);
+		repositoryProvincia.saveAll(province);
 	}
 
 }

@@ -8,7 +8,7 @@ import it.simone.exespringfinal.service.AbstractService;
 import it.simone.exespringfinal.service.ServiceTipoServizio;
 
 @RestController
-@RequestMapping("/tiposervizio")
+@RequestMapping("/tiposervizi")
 public class ControllerTipoServizio extends AbstractController<TipoServizio, Long> {
 
 	private final ServiceTipoServizio service;
